@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: pythonserver
-        image: dirt1992/shitchat:latest
+        image: dirt1992/shitchat:0.2
         # image: dirt1992/pythonserverblank:v0.1.1
         imagePullPolicy: IfNotPresent
         ports:
