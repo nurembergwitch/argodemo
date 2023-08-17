@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: pythonserver
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: pythonserver
   template:
     metadata:
       labels:
-        app: nginx
+        app: pythonserver
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: pythonserver
+        image: dirt1992/pythonserverblank:v0.1.1
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: 8000
         resources: {}
