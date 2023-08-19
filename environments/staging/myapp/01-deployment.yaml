@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shitchat
+  namespace: bar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shitchat
+  template:
+    metadata:
+      labels:
+        app: shitchat
+    spec:
+      containers:
+      - name: shitchat
+        image: dirt1992/shitchat:v0.2
+        # image: dirt1992/pythonserverblank:v0.1.1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+        resources: {}
